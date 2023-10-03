@@ -1,16 +1,32 @@
+/** @format */
+
+import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
+import Home from './Home';
+import Movies from './Movies';
+import MovieDetails from './MovieDetails';
+import Cast from './Cast';
+import Reviews from './Reviews';
+import { NavMenu } from './App.styled';
+
 export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
+	const location = useLocation();
+	return (
+		<>
+			<NavMenu>
+				<NavLink to='/' end>
+					Home
+				</NavLink>
+				<NavLink to='/movies'>Movies</NavLink>
+			</NavMenu>
+
+			<Routes>
+				<Route path='/' element={<Home />} />
+				<Route path='/movies' element={<Movies />} state={{ from: location }} />
+				<Route path='/movies/:id' element={<MovieDetails />}>
+					<Route path='cast' element={<Cast />} />
+					<Route path='reviews' element={<Reviews />} />
+				</Route>
+			</Routes>
+		</>
+	);
 };
