@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/BishopNik/goit-react-hw-05-movies/static/css/main.5d4c55a7.css",
-    "main.js": "/BishopNik/goit-react-hw-05-movies/static/js/main.b1728254.js",
+    "main.js": "/BishopNik/goit-react-hw-05-movies/static/js/main.7e80ca76.js",
     "index.html": "/BishopNik/goit-react-hw-05-movies/index.html",
     "main.5d4c55a7.css.map": "/BishopNik/goit-react-hw-05-movies/static/css/main.5d4c55a7.css.map",
-    "main.b1728254.js.map": "/BishopNik/goit-react-hw-05-movies/static/js/main.b1728254.js.map"
+    "main.7e80ca76.js.map": "/BishopNik/goit-react-hw-05-movies/static/js/main.7e80ca76.js.map"
   },
   "entrypoints": [
     "static/css/main.5d4c55a7.css",
-    "static/js/main.b1728254.js"
+    "static/js/main.7e80ca76.js"
   ]
 }
