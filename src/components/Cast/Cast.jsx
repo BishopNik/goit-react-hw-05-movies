@@ -3,6 +3,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { fetchMovieOption, apiKey } from '../utils/fetch_api';
+import { Title, ContentList, CastItem, ErrorMessage, Img } from '../Styled/Additional.styled';
 
 const Cast = () => {
 	const { id } = useParams();
@@ -16,26 +17,26 @@ const Cast = () => {
 
 	return (
 		<div>
-			<p>Cast</p>
-			<ul>
+			<Title>Cast</Title>
+			<ContentList>
 				{option.cast?.length > 0 ? (
 					option.cast?.map(item => {
 						const path = item.profile_path
 							? `https://image.tmdb.org/t/p/w500${item.profile_path}?api_key=${apiKey}`
-							: `https://klike.net/uploads/posts/2019-03/1551511818_27.jpg`;
+							: `https://previews.123rf.com/images/yupiramos/yupiramos1802/yupiramos180216203/95810236-best-actor-award-vector-illustration.jpg`;
 
 						return (
-							<li key={item.id}>
+							<CastItem key={item.id}>
 								<span>{item.name}</span>
 								<span>{item.chracter}</span>
-								{path ? <img src={path} alt={item.name} width='100px' /> : null}
-							</li>
+								{path ? <Img src={path} alt={item.name} /> : null}
+							</CastItem>
 						);
 					})
 				) : (
-					<p>Cast not found</p>
+					<ErrorMessage>Cast not found</ErrorMessage>
 				)}
-			</ul>
+			</ContentList>
 		</div>
 	);
 };

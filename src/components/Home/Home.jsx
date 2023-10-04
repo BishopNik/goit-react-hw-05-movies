@@ -1,10 +1,11 @@
 /** @format */
 
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import MovieDetails from '../MovieDetails';
 import { fetchDayTrendingMovies } from '../utils/fetch_api';
-import { MoviesItems } from './Home.styled';
+import { MoviesItems, MovieLink } from '../Styled/Home.styled';
+import { ErrorMessage } from '../Styled/Additional.styled';
 
 const Home = () => {
 	const location = useLocation();
@@ -20,17 +21,17 @@ const Home = () => {
 		<MoviesItems>
 			{movies.length ? (
 				movies.map(movie => (
-					<Link
+					<MovieLink
 						key={movie.id}
 						to={`/movies/${movie.id}`}
 						element={<MovieDetails />}
 						state={{ from: location }}
 					>
 						{movie.name ?? movie.original_title}
-					</Link>
+					</MovieLink>
 				))
 			) : (
-				<span>No movies day tranding</span>
+				<ErrorMessage>No movies day tranding</ErrorMessage>
 			)}
 		</MoviesItems>
 	);

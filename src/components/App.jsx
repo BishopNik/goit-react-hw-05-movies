@@ -6,7 +6,7 @@ import Movies from './Movies';
 import MovieDetails from './MovieDetails';
 import Cast from './Cast';
 import Reviews from './Reviews';
-import { NavMenu } from './App.styled';
+import { NavMenu } from './Styled/App.styled';
 
 export const App = () => {
 	const location = useLocation();
