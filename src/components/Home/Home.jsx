@@ -6,6 +6,7 @@ import MovieDetails from '../MovieDetails';
 import { fetchDayTrendingMovies } from '../utils/fetch_api';
 import { MoviesItems, MovieLink } from '../Styled/Home.styled';
 import { ErrorMessage } from '../Styled/Additional.styled';
+import { toastWindow } from '../utils/toastwindow.js';
 
 const Home = () => {
 	const location = useLocation();
@@ -14,7 +15,7 @@ const Home = () => {
 	useEffect(() => {
 		fetchDayTrendingMovies()
 			.then(({ results }) => setMovies(results))
-			.catch(error => console.log(error));
+			.catch(error => toastWindow(`Error loading trending movies (${error})`));
 	}, []);
 
 	return (

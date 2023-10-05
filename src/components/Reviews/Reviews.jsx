@@ -2,8 +2,7 @@
 
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { ToastContainer } from 'react-toastify';
-import toastWindow from '../utils/toastwindow.js';
+import { toastWindow } from '../utils/toastwindow.js';
 import { fetchMovieOption } from '../utils/fetch_api';
 import { dateToString } from '../utils/utils';
 
@@ -49,7 +48,6 @@ const Reviews = () => {
 					<ErrorMessage>Reviews not found</ErrorMessage>
 				)}
 			</ContentBlock>
-			<ToastContainer position='top-right' autoClose={5000} hideProgressBar={false} />
 		</>
 	);
 };

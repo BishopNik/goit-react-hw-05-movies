@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { fetchMovieOption, apiKey } from '../utils/fetch_api';
 import { Title, ContentList, CastItem, ErrorMessage, Img } from '../Styled/Additional.styled';
+import { toastWindow } from '../utils/toastwindow.js';
 
 const Cast = () => {
 	const { id } = useParams();
@@ -12,7 +13,7 @@ const Cast = () => {
 	useEffect(() => {
 		fetchMovieOption(id, 'credits')
 			.then(({ data }) => setOption(data))
-			.catch(error => console.log(error));
+			.catch(error => toastWindow(`Error loading movie cast (${error})`));
 	}, [id]);
 
 	return (
