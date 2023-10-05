@@ -1,13 +1,27 @@
 {
   "files": {
-    "main.css": "/BishopNik/goit-react-hw-05-movies/static/css/main.5d4c55a7.css",
-    "main.js": "/BishopNik/goit-react-hw-05-movies/static/js/main.7e80ca76.js",
+    "main.css": "/BishopNik/goit-react-hw-05-movies/static/css/main.053ba61d.css",
+    "main.js": "/BishopNik/goit-react-hw-05-movies/static/js/main.d616e5a7.js",
+    "static/js/782.faf5fd42.chunk.js": "/BishopNik/goit-react-hw-05-movies/static/js/782.faf5fd42.chunk.js",
+    "static/js/890.862ae5b1.chunk.js": "/BishopNik/goit-react-hw-05-movies/static/js/890.862ae5b1.chunk.js",
+    "static/js/735.7bd7f506.chunk.js": "/BishopNik/goit-react-hw-05-movies/static/js/735.7bd7f506.chunk.js",
+    "static/js/877.037df307.chunk.js": "/BishopNik/goit-react-hw-05-movies/static/js/877.037df307.chunk.js",
+    "static/js/184.2eeabd21.chunk.js": "/BishopNik/goit-react-hw-05-movies/static/js/184.2eeabd21.chunk.js",
+    "static/js/279.98b18e7a.chunk.js": "/BishopNik/goit-react-hw-05-movies/static/js/279.98b18e7a.chunk.js",
+    "static/js/185.a89ef058.chunk.js": "/BishopNik/goit-react-hw-05-movies/static/js/185.a89ef058.chunk.js",
     "index.html": "/BishopNik/goit-react-hw-05-movies/index.html",
-    "main.5d4c55a7.css.map": "/BishopNik/goit-react-hw-05-movies/static/css/main.5d4c55a7.css.map",
-    "main.7e80ca76.js.map": "/BishopNik/goit-react-hw-05-movies/static/js/main.7e80ca76.js.map"
+    "main.053ba61d.css.map": "/BishopNik/goit-react-hw-05-movies/static/css/main.053ba61d.css.map",
+    "main.d616e5a7.js.map": "/BishopNik/goit-react-hw-05-movies/static/js/main.d616e5a7.js.map",
+    "782.faf5fd42.chunk.js.map": "/BishopNik/goit-react-hw-05-movies/static/js/782.faf5fd42.chunk.js.map",
+    "890.862ae5b1.chunk.js.map": "/BishopNik/goit-react-hw-05-movies/static/js/890.862ae5b1.chunk.js.map",
+    "735.7bd7f506.chunk.js.map": "/BishopNik/goit-react-hw-05-movies/static/js/735.7bd7f506.chunk.js.map",
+    "877.037df307.chunk.js.map": "/BishopNik/goit-react-hw-05-movies/static/js/877.037df307.chunk.js.map",
+    "184.2eeabd21.chunk.js.map": "/BishopNik/goit-react-hw-05-movies/static/js/184.2eeabd21.chunk.js.map",
+    "279.98b18e7a.chunk.js.map": "/BishopNik/goit-react-hw-05-movies/static/js/279.98b18e7a.chunk.js.map",
+    "185.a89ef058.chunk.js.map": "/BishopNik/goit-react-hw-05-movies/static/js/185.a89ef058.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5d4c55a7.css",
-    "static/js/main.7e80ca76.js"
+    "static/css/main.053ba61d.css",
+    "static/js/main.d616e5a7.js"
   ]
 }
