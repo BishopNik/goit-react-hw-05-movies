@@ -17,7 +17,7 @@ import {
 
 const Reviews = () => {
 	const { id } = useParams();
-	const [option, setOption] = useState({});
+	const [option, setOption] = useState(null);
 
 	useEffect(() => {
 		fetchMovieOption(id, 'reviews')
@@ -29,25 +29,29 @@ const Reviews = () => {
 
 	return (
 		<>
-			{option.length > 0 ? <Title>Reviews</Title> : null}
-			<ContentBlock>
-				{option.length > 0 ? (
-					option.map(item => {
-						const date = dateToString(item.created_at);
-						return (
-							<AddItem key={item.id}>
-								<span>
-									Write <Author>{item.author}</Author> at {date}
-								</span>
-								<TextReview>{item.content}</TextReview>
-								<a href={item.url}>Original review</a>
-							</AddItem>
-						);
-					})
-				) : (
-					<ErrorMessage>Reviews not found</ErrorMessage>
-				)}
-			</ContentBlock>
+			{option !== null ? (
+				<>
+					{option.length > 0 ? <Title>Reviews</Title> : null}
+					<ContentBlock>
+						{option.length > 0 ? (
+							option.map(item => {
+								const date = dateToString(item.created_at);
+								return (
+									<AddItem key={item.id}>
+										<span>
+											Write <Author>{item.author}</Author> at {date}
+										</span>
+										<TextReview>{item.content}</TextReview>
+										<a href={item.url}>Original review</a>
+									</AddItem>
+								);
+							})
+						) : (
+							<ErrorMessage>Reviews not found</ErrorMessage>
+						)}
+					</ContentBlock>
+				</>
+			) : null}
 		</>
 	);
 };

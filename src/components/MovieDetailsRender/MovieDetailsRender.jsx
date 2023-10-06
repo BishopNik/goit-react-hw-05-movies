@@ -1,9 +1,9 @@
 /** @format */
 
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { toastWindow } from '../utils/toastwindow.js';
-import { fetchMovieDetails, apiKey } from '../utils/fetch_api';
+import { fetchMovieDetails, apiKey } from '../utils/fetch_api.js';
 import {
 	MovieContainer,
 	MovieUl,
@@ -15,14 +15,11 @@ import {
 	MovieLi,
 	MovieHomepage,
 	MovieImg,
-} from '../Styled/MovieDetails.styled';
-import { BackLink, BackCont } from '../Styled/Additional.styled';
+} from '../Styled/MovieDetails.styled.jsx';
 
-const MovieDetails = () => {
+const MovieDetailsRender = () => {
 	const { id } = useParams(null);
 	const [movie, setMovie] = useState(null);
-	const location = useLocation();
-	const locationMain = useRef(location.state?.from ?? '/movies');
 
 	useEffect(() => {
 		if (!id) {
@@ -39,13 +36,9 @@ const MovieDetails = () => {
 
 	return (
 		<>
-			<BackCont>
-				<BackLink to={locationMain.current}>Back to ...</BackLink>
-			</BackCont>
-
 			{movie && (
 				<MovieContainer key={movie.id}>
-					<MovieTitle>{movie.title ?? movie.original_title}</MovieTitle>
+					<MovieTitle>{movie.title ?? movie.title ?? movie.original_title}</MovieTitle>
 					<MovieUl>
 						<li>
 							<MovieImg src={path} alt={movie.title ?? movie.original_title} />
@@ -78,10 +71,8 @@ const MovieDetails = () => {
 									<span>Production Countries:</span>
 									<ul>
 										{movie.production_countries &&
-											movie.production_countries.map(item => (
-												<MovieLi key={movie.id + item.id}>
-													{item.name}
-												</MovieLi>
+											movie.production_countries.map((item, idx) => (
+												<MovieLi key={idx}>{item.name}</MovieLi>
 											))}
 									</ul>
 								</MovieItem>
@@ -107,8 +98,8 @@ const MovieDetails = () => {
 									<span>Genres:</span>
 									<ul>
 										{movie.genres &&
-											movie.genres.map(item => (
-												<MovieLi key={item.id}>{item.name}</MovieLi>
+											movie.genres.map((item, idx) => (
+												<MovieLi key={idx}>{item.name}</MovieLi>
 											))}
 									</ul>
 								</MovieItem>
@@ -123,9 +114,8 @@ const MovieDetails = () => {
 					</MovieUl>
 				</MovieContainer>
 			)}
-			<Outlet />
 		</>
 	);
 };
 
-export default MovieDetails;
+export default MovieDetailsRender;

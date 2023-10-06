@@ -21,12 +21,4 @@ p {
 
 a {
 	padding: 0;
-	text-decoration: none;
-	color: darkblue;
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-a:hover {
-	color: peru;
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
